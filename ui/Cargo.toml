@@ -1,0 +1,9 @@
+[package]
+name = "ui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dioxus = { workspace = true, features = ["web"] }
+server = { workspace = true }
+web-sys = { version = "0.3.64", features = ["Window", "Document", "Element", "HtmlElement", "HtmlHeadElement"] }
