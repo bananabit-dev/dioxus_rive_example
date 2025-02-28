@@ -1,18 +1,11 @@
 use dioxus::prelude::*;
 
+const RIVE_INIT_JS: Asset = asset!("/assets/rive-init.js");
+
 #[component]
 pub fn RiveAnimation() -> Element {
-    let init_script = include_str!("../../web/public/rive-init.js");
-    
-    // Create a unique ID for the script element
-    let script_id = "rive-init-script";
-    
     rsx! {
-        // Add the script element with our initialization code
-        script {
-            id: "{script_id}",
-            dangerous_inner_html: "{init_script}"
-        }
+        document::Script { src: RIVE_INIT_JS ,id: "rive-init-script"}
         
         // Add the Rive canvas container
         div {
